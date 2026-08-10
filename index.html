@@ -4,6 +4,24 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
     <title>Banajit Barman | Experimental High-Energy Physics</title>
+    <meta name="description" content="Banajit Barman — PhD researcher in experimental high-energy physics with the ALICE Collaboration at CERN. Light-flavour particle production, baryon number transport, and QGP-like behaviour in small collision systems.">
+    <meta name="author" content="Banajit Barman">
+    <link rel="canonical" href="https://banajitbarman.github.io/bbarman/">
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='48' fill='%230a192f'/%3E%3Ctext x='50' y='68' font-family='Helvetica,Arial,sans-serif' font-size='52' font-weight='bold' fill='%2360a5fa' text-anchor='middle'%3EB%3C/text%3E%3C/svg%3E">
+
+    <!-- Open Graph / Twitter link previews -->
+    <meta property="og:type" content="profile">
+    <meta property="og:title" content="Banajit Barman | Experimental High-Energy Physics">
+    <meta property="og:description" content="PhD researcher with the ALICE Collaboration at CERN — light-flavour particle production, baryon number transport, and QGP-like behaviour in small collision systems.">
+    <meta property="og:url" content="https://banajitbarman.github.io/bbarman/">
+    <meta property="og:image" content="https://banajitbarman.github.io/bbarman/profile.png">
+    <meta property="og:image:alt" content="Portrait of Banajit Barman">
+    <meta property="og:site_name" content="Banajit Barman">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Banajit Barman | Experimental High-Energy Physics">
+    <meta name="twitter:description" content="PhD researcher with the ALICE Collaboration at CERN — light-flavour particle production, baryon number transport, and QGP-like behaviour in small collision systems.">
+    <meta name="twitter:image" content="https://banajitbarman.github.io/bbarman/profile.png">
+
     <!-- SEO / Structured Data -->
     <script type="application/ld+json">
     {
@@ -15,16 +33,20 @@
         "name": "ALICE Collaboration, CERN"
       },
       "jobTitle": "PhD Researcher",
-      "url": "https://banajitbarman.github.io",
+      "email": "mailto:banajit.barman@cern.ch",
+      "image": "https://banajitbarman.github.io/bbarman/profile.png",
+      "url": "https://banajitbarman.github.io/bbarman/",
       "sameAs": [
         "https://inspirehep.net/authors/2586681",
         "https://github.com/BanajitBarman"
       ]
     }
     </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
     <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <style>
         :root {
@@ -52,11 +74,25 @@
             --bg-card: #1e293b;
             --text-main: #e2e8f0;
             --text-muted: #94a3b8;
+            /* Headings and accents must lighten too, or they vanish on dark cards */
+            --primary-dark: #e2e8f0;
+            --primary-blue: #93c5fd;
+            --accent-blue: #60a5fa;
+            --border-soft: #475569;
+            --dot-ring: #1e293b;
+            --tint-soft: #334155;
         }
+        :root { --border-soft: #e2e8f0; --dot-ring: #ffffff; --tint-soft: #eff6ff; }
         body.dark-mode nav { background-color: rgba(15, 23, 42, 0.95); }
         body.dark-mode section { box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.3); }
         body.dark-mode .badge { background-color: #334155; color: #93c5fd; border-color: #475569; }
-        body.dark-mode .badge:hover { background-color: var(--accent-blue); color: white; }
+        body.dark-mode .badge:hover { background-color: var(--accent-blue); color: #0f172a; }
+        body.dark-mode .citation-format-btn { background: #334155; border-color: #475569; color: var(--text-main); }
+        body.dark-mode .citation-format-btn.active { background: var(--accent-blue); color: #0f172a; }
+        body.dark-mode .inline-copy-btn, body.dark-mode .doi-copy-btn { background: #475569; color: #e2e8f0; }
+        body.dark-mode #citePaperSelect { background: #334155; color: var(--text-main); border: 1px solid #475569; }
+        body.dark-mode .keyword { color: var(--accent-light); }
+        body.dark-mode .entry-date { color: #bfdbfe; }
         nav {
             position: fixed;
             top: 0;
@@ -105,7 +141,8 @@
             opacity: 0.7;
         }
         .hero {
-            background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary-blue) 100%);
+            /* Fixed dark gradient — must not follow the themed --primary-* vars */
+            background: linear-gradient(135deg, #0a192f 0%, #003366 100%);
             position: relative;
             color: white;
             padding: 180px 20px 100px;
@@ -139,19 +176,18 @@
             color: var(--primary-dark); font-size: 1.8em; font-weight: 700; margin-top: 0; margin-bottom: 30px;
             display: flex; align-items: center; gap: 10px;
         }
-        h2::after { content: ""; flex: 1; height: 2px; background: #e2e8f0; margin-left: 15px; }
-        body.dark-mode h2::after { background: #475569; }
+        h2::after { content: ""; flex: 1; height: 2px; background: var(--border-soft); margin-left: 15px; }
         h3 { color: var(--accent-blue); font-size: 1.25em; margin: 1.5em 0 0.8em; font-weight: 600; }
-        .timeline { border-left: 3px solid #e2e8f0; padding-left: 30px; margin-left: 10px; }
+        .timeline { border-left: 3px solid var(--border-soft); padding-left: 30px; margin-left: 10px; }
         .timeline .entry { position: relative; margin-bottom: 35px; }
         .timeline .entry::before {
             content: ''; position: absolute; left: -38.5px; top: 5px; width: 14px; height: 14px;
-            background: var(--accent-blue); border-radius: 50%; border: 4px solid white;
-            box-shadow: 0 0 0 2px #e2e8f0;
+            background: var(--accent-blue); border-radius: 50%; border: 4px solid var(--dot-ring);
+            box-shadow: 0 0 0 2px var(--border-soft);
         }
         .entry-header { display: flex; justify-content: space-between; flex-wrap: wrap; margin-bottom: 5px; }
         .entry-title { font-weight: 700; }
-        .entry-date { color: var(--accent-blue); font-size: 0.9em; font-weight: 600; background: #eff6ff; padding: 4px 10px; border-radius: 20px; }
+        .entry-date { color: var(--accent-blue); font-size: 0.9em; font-weight: 600; background: var(--tint-soft); padding: 4px 10px; border-radius: 20px; }
         .badge {
             background-color: #f8fafc; color: var(--primary-blue); padding: 8px 18px; border-radius: 8px;
             font-weight: 600; border: 1px solid #e2e8f0; transition: all 0.2s; display: inline-block;
@@ -191,6 +227,30 @@
         .citation-formats { display: flex; gap: 10px; margin-bottom: 15px; flex-wrap: wrap; }
         .citation-format-btn { padding: 8px 16px; background: #f1f5f9; border: 1px solid #e2e8f0; border-radius: 6px; cursor: pointer; font-weight: 600; }
         .citation-format-btn.active { background: var(--accent-blue); color: white; }
+        body.dark-mode .inline-copy-btn:hover, body.dark-mode .doi-copy-btn:hover { background: var(--accent-blue); color: #0f172a; }
+
+        /* Keyboard accessibility */
+        .skip-link {
+            position: absolute; left: -9999px; top: 0; z-index: 4000;
+            background: var(--accent-blue); color: #fff; padding: 12px 20px; border-radius: 0 0 8px 0;
+            text-decoration: none; font-weight: 600;
+        }
+        .skip-link:focus { left: 0; }
+        a:focus-visible, button:focus-visible, select:focus-visible {
+            outline: 3px solid var(--accent-light); outline-offset: 2px; border-radius: 4px;
+        }
+
+        /* Respect users who ask for reduced motion */
+        @media (prefers-reduced-motion: reduce) {
+            html { scroll-behavior: auto; }
+            *, *::before, *::after {
+                animation-duration: 0.01ms !important; animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+            }
+            #globalCollisionCanvas { display: none; }
+            section:hover, .profile-photo:hover, .social-links a:hover,
+            .control-btn:hover, .badge:hover, .keyword:hover { transform: none; }
+        }
         @media (max-width: 768px) {
             .hero-content { flex-direction: column; text-align: center; gap: 30px; }
             .hero h1 { font-size: 2.8em; }
@@ -221,10 +281,23 @@
             font-size: 0.7em;
             margin-left: 4px;
         }
+        .paper-link {
+            color: var(--text-main); text-decoration: none;
+            border-bottom: 1px dashed var(--accent-blue); transition: 0.2s;
+        }
+        .paper-link:hover { color: var(--accent-blue); border-bottom-style: solid; }
+        .paper-link i.fa-external-link-alt { font-size: 0.65em; margin-left: 5px; opacity: 0.7; vertical-align: middle; }
+        .site-footer {
+            text-align: center; color: var(--text-muted); font-size: 0.9em;
+            padding: 30px 20px 50px; position: relative; z-index: 10;
+        }
+        .site-footer a { color: var(--accent-blue); text-decoration: none; }
+        .site-footer a:hover { text-decoration: underline; }
     </style>
 </head>
 <body>
-    <canvas id="globalCollisionCanvas"></canvas>
+    <a class="skip-link" href="#about">Skip to main content</a>
+    <canvas id="globalCollisionCanvas" aria-hidden="true"></canvas>
     <nav aria-label="Main navigation">
         <ul>
             <li><a href="#home">Home</a></li>
@@ -243,7 +316,11 @@
     </div>
     <header class="hero" id="home">
         <div class="hero-content">
-            <img src="profile.png" alt="Banajit Barman" class="profile-photo" onerror="this.src='https://ui-avatars.com/api/?background=0a192f&color=fff&name=Banajit+Barman'">
+            <picture>
+                <source srcset="profile.webp" type="image/webp">
+                <img src="profile.png" alt="Banajit Barman" class="profile-photo" width="220" height="220" fetchpriority="high"
+                     onerror="this.src='https://ui-avatars.com/api/?background=0a192f&color=fff&name=Banajit+Barman'">
+            </picture>
             <div class="hero-text">
                 <h1>Banajit Barman</h1>
                 <p class="subtitle">PhD Researcher in Experimental High-Energy Physics</p>
@@ -252,7 +329,7 @@
                     <a href="mailto:banajit.barman@cern.ch"><i class="fas fa-envelope"></i> Email</a>
                     <a href="https://inspirehep.net/authors/2586681" target="_blank" rel="noopener"><i class="fas fa-atom"></i> Inspire HEP</a>
                     <a href="https://github.com/BanajitBarman" target="_blank" rel="noopener"><i class="fab fa-github"></i> GitHub</a>
-                    <a href="#" onclick="return false;" style="opacity:0.8;"><i class="fab fa-google-scholar"></i> Scholar</a>
+                    <a href="Banajit_Barman_CV.pdf" download><i class="fas fa-file-pdf"></i> CV</a>
                 </div>
             </div>
         </div>
@@ -292,15 +369,15 @@
 
             <h3>⭐ Phenomenological Papers</h3>
             <ul id="papers-list" style="list-style-type: none; padding-left: 0;">
-                <li style="margin-bottom: 20px;"><strong>Tonmoy Sharma, Banajit Barman, Buddhadeb Bhattacharjee.</strong> "Production of heavy flavored particles in \(p+p\) collisions: A unified model description for ALICE and LHCb Measurements." <em>Phys. Rev. C</em> <strong>113</strong>, 034918 (2026).
+                <li style="margin-bottom: 20px;"><strong>Tonmoy Sharma, Banajit Barman, Buddhadeb Bhattacharjee.</strong> <a class="paper-link" href="https://doi.org/10.1103/PhysRevC.113.034918" target="_blank" rel="noopener">"Production of heavy flavored particles in \(p+p\) collisions: A unified model description for ALICE and LHCb Measurements."<i class="fas fa-external-link-alt"></i></a> <em>Phys. Rev. C</em> <strong>113</strong>, 034918 (2026).
                     <button class="inline-copy-btn" data-citation="Sharma, T., Barman, B., & Bhattacharjee, B. (2026). Production of heavy flavored particles in pp collisions... Physical Review C, 113, 034918."><i class="fas fa-copy"></i> Copy</button>
                     <button class="doi-copy-btn" data-doi="10.1103/PhysRevC.113.034918"><i class="fas fa-link"></i> DOI</button>
                 </li>
-                <li style="margin-bottom: 20px;"><strong>Banajit Barman, Nur Hussain, Buddhadeb Bhattacharjee.</strong> "Baryon number transportation over full rapidity space in pp collisions at energies available at the CERN Large Hadron Collider." <em>Phys. Rev. C</em> <strong>111</strong>, 014905 (2025).
+                <li style="margin-bottom: 20px;"><strong>Banajit Barman, Nur Hussain, Buddhadeb Bhattacharjee.</strong> <a class="paper-link" href="https://doi.org/10.1103/PhysRevC.111.014905" target="_blank" rel="noopener">"Baryon number transportation over full rapidity space in pp collisions at energies available at the CERN Large Hadron Collider."<i class="fas fa-external-link-alt"></i></a> <em>Phys. Rev. C</em> <strong>111</strong>, 014905 (2025).
                     <button class="inline-copy-btn" data-citation="Barman, B., Hussain, N., & Bhattacharjee, B. (2025). Baryon number transportation over full rapidity space in pp collisions... Physical Review C, 111, 014905."><i class="fas fa-copy"></i> Copy</button>
                     <button class="doi-copy-btn" data-doi="10.1103/PhysRevC.111.014905"><i class="fas fa-link"></i> DOI</button>
                 </li>
-                <li style="margin-bottom: 20px;"><strong>Pranjal Sarma, Banajit Barman, Buddhadeb Bhattacharjee.</strong> "Effect of color reconnection on multiplicity-dependent charged particle production in PYTHIA-generated pp collisions at the LHC energies." <em>Eur. Phys. J. A</em> <strong>59</strong>(4), 76 (2023).
+                <li style="margin-bottom: 20px;"><strong>Pranjal Sarma, Banajit Barman, Buddhadeb Bhattacharjee.</strong> <a class="paper-link" href="https://doi.org/10.1140/epja/s10050-023-00989-7" target="_blank" rel="noopener">"Effect of color reconnection on multiplicity-dependent charged particle production in PYTHIA-generated pp collisions at the LHC energies."<i class="fas fa-external-link-alt"></i></a> <em>Eur. Phys. J. A</em> <strong>59</strong>(4), 76 (2023).
                     <button class="inline-copy-btn" data-citation="Sarma, P., Barman, B., & Bhattacharjee, B. (2023). Effect of color reconnection on multiplicity dependent charged particle production... Eur. Phys. J. A, 59(4), 76."><i class="fas fa-copy"></i> Copy</button>
                     <button class="doi-copy-btn" data-doi="10.1140/epja/s10050-023-00989-7"><i class="fas fa-link"></i> DOI</button>
                 </li>
@@ -379,15 +456,25 @@
 
             <div style="display: flex; justify-content: center; align-items: center; margin-top: 20px; overflow: hidden; border-radius: 12px;">
 
-                <a href="https://mapmyvisitors.com/web/1c4gg" title="Visit tracker" target="_blank">
+                <a href="https://mapmyvisitors.com/web/1c4gg" title="Visit tracker" target="_blank" rel="noopener">
                    <img src="https://mapmyvisitors.com/map.png?d=s658g_4BPimCKIvzU2SfhLyEvRIMd91EGBXckub28rM&cl=ffffff&w=1400"
      alt="Global Visitor Map"
+     loading="lazy" decoding="async"
      style="width: 1000px; max-width: 100%; height: auto; border-radius: 12px; box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);">
                 </a>
 
             </div>
         </section>
     </div>
+
+    <footer class="site-footer">
+        <p>
+            © <span id="footerYear">2026</span> Banajit Barman ·
+            <a href="mailto:banajit.barman@cern.ch">banajit.barman@cern.ch</a> ·
+            <a href="https://github.com/BanajitBarman/bbarman" target="_blank" rel="noopener">Source</a>
+        </p>
+        <p>Last updated <time datetime="2026-08-10">10 August 2026</time></p>
+    </footer>
 
     <div id="citationModal" class="modal"><div class="modal-content"><span class="close" onclick="closeCitationModal()">&times;</span><h3><i class="fas fa-quote-right"></i> Cite this work</h3>
         <select id="citePaperSelect" style="width:100%; padding:8px; margin-bottom:15px; border-radius:8px;">
@@ -434,24 +521,33 @@
             }
             requestAnimationFrame(animate);
         }
-        animate();
-        setInterval(() => { if(collisions.length<3) spawnCollision(Math.random()*width, Math.random()*(height-200)+100); }, 5000);
-        setTimeout(() => spawnCollision(width/2, height*0.3), 300);
-        window.addEventListener('click', (e) => { if(e.target.closest('nav, .control-btn, a, button') === null) spawnCollision(e.clientX, e.clientY); });
+        // Only run the animation for users who haven't asked for reduced motion
+        const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+        if (!reduceMotion.matches) {
+            animate();
+            setInterval(() => { if(collisions.length<3) spawnCollision(Math.random()*width, Math.random()*(height-200)+100); }, 5000);
+            setTimeout(() => spawnCollision(width/2, height*0.3), 300);
+            window.addEventListener('click', (e) => { if(e.target.closest('nav, .control-btn, a, button') === null) spawnCollision(e.clientX, e.clientY); });
+        }
 
         // Dark mode
         const darkToggle = document.getElementById('darkModeToggle');
+        function syncDarkIcon() {
+            const isDark = document.body.classList.contains('dark-mode');
+            darkToggle.innerHTML = isDark ? '<i class="fas fa-sun"></i>' : '<i class="fas fa-moon"></i>';
+            darkToggle.setAttribute('aria-label', isDark ? 'Switch to light mode' : 'Switch to dark mode');
+            darkToggle.setAttribute('aria-pressed', String(isDark));
+        }
         if(localStorage.getItem('darkMode') === 'enabled' || (!localStorage.getItem('darkMode') && window.matchMedia('(prefers-color-scheme: dark)').matches)) document.body.classList.add('dark-mode');
-        darkToggle.addEventListener('click', () => { document.body.classList.toggle('dark-mode'); localStorage.setItem('darkMode', document.body.classList.contains('dark-mode') ? 'enabled' : 'disabled'); darkToggle.innerHTML = document.body.classList.contains('dark-mode') ? '<i class="fas fa-sun"></i>' : '<i class="fas fa-moon"></i>'; });
+        syncDarkIcon();
+        darkToggle.addEventListener('click', () => { document.body.classList.toggle('dark-mode'); localStorage.setItem('darkMode', document.body.classList.contains('dark-mode') ? 'enabled' : 'disabled'); syncDarkIcon(); });
 
         // Back to top
         window.addEventListener('scroll', () => { const btn=document.getElementById('backToTop'); if(window.scrollY>300) btn.classList.add('show'); else btn.classList.remove('show'); });
         function scrollToTop() { window.scrollTo({top:0,behavior:'smooth'}); }
 
-        // Lazy load visitor map
-        const mapImg = document.getElementById('visitorMap');
-        const observer = new IntersectionObserver((entries) => { entries.forEach(entry => { if(entry.isIntersecting) { mapImg.src = mapImg.dataset.src; observer.unobserve(mapImg); } }); }, { threshold: 0.1 });
-        observer.observe(mapImg);
+        // Footer year
+        document.getElementById('footerYear').textContent = new Date().getFullYear();
 
         // Citation modal (same as before)
         const modal = document.getElementById('citationModal');
@@ -474,10 +570,30 @@
             });
         });
         document.getElementById('citePaperSelect').addEventListener('change', (e) => { currentPaper = e.target.value; updateCitationDisplay(); });
-        document.getElementById('citationBtn').onclick = () => { modal.style.display='block'; currentPaper='profile'; document.getElementById('citePaperSelect').value='profile'; updateCitationDisplay(); };
-        function closeCitationModal() { modal.style.display='none'; }
+        let lastFocused = null;
+        document.getElementById('citationBtn').onclick = () => {
+            lastFocused = document.activeElement;
+            modal.style.display='block';
+            currentPaper='profile';
+            document.getElementById('citePaperSelect').value='profile';
+            updateCitationDisplay();
+            document.getElementById('citePaperSelect').focus();
+        };
+        function closeCitationModal() {
+            modal.style.display='none';
+            if (lastFocused) lastFocused.focus();
+        }
         window.onclick = (e) => { if(e.target === modal) closeCitationModal(); };
-        document.getElementById('copyModalCitationBtn').onclick = () => { const txt = document.querySelector('#citationContent .citation-box')?.innerText; if(txt) { navigator.clipboard.writeText(txt); alert('Citation copied!'); } };
+        document.addEventListener('keydown', (e) => { if(e.key === 'Escape' && modal.style.display === 'block') closeCitationModal(); });
+        const copyModalBtn = document.getElementById('copyModalCitationBtn');
+        copyModalBtn.onclick = () => {
+            const txt = document.querySelector('#citationContent .citation-box')?.innerText;
+            if(!txt) return;
+            navigator.clipboard.writeText(txt).then(() => {
+                copyModalBtn.innerHTML = '✓ Copied!';
+                setTimeout(() => copyModalBtn.innerHTML = '<i class="fas fa-copy"></i> Copy', 1500);
+            });
+        };
         document.querySelectorAll('.inline-copy-btn').forEach(btn => { btn.addEventListener('click', () => { const text = btn.getAttribute('data-citation'); navigator.clipboard.writeText(text); btn.innerHTML = '✓ Copied!'; setTimeout(()=> btn.innerHTML = '<i class="fas fa-copy"></i> Copy', 1500); }); });
         document.querySelectorAll('.doi-copy-btn').forEach(btn => { btn.addEventListener('click', () => { const doi = btn.getAttribute('data-doi'); navigator.clipboard.writeText(`https://doi.org/${doi}`); btn.innerHTML = '✓ DOI copied'; setTimeout(()=> btn.innerHTML = '<i class="fas fa-link"></i> DOI', 1500); }); });
     </script>
